@@ -1,11 +1,10 @@
-import { Heroe } from './../models/heroe';
-import { Injectable } from '@angular/core';
+import { Heroe } from "./../models/heroe";
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class HeroeService {
-
   heroes: Heroe[] = [
     {
       id: 0,
@@ -72,11 +71,23 @@ export class HeroeService {
     },
   ];
 
-  constructor() { 
-    console.log('Servicio listo para usarse');
+  constructor() {
+    console.log("Servicio listo para usarse");
   }
 
-  getHeroes(){
+  getHeroes() {
     return this.heroes;
+  }
+  buscarHeroe(termino: string): Heroe[] {
+    termino = termino.toLowerCase();
+    let heroesEncontrados: Heroe[] = [];
+    debugger;
+    this.heroes.forEach((heroe) => {
+      if (heroe.nombre.toLowerCase().indexOf(termino) >= 0) {
+        heroesEncontrados.push(heroe);
+      }
+    });
+    console.log(heroesEncontrados);
+    return heroesEncontrados;
   }
 }

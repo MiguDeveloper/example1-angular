@@ -18,12 +18,31 @@
         <a class="nav-link" [routerLink]="['home']">Home</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['directivas-estructurales']">Estructurales</a>
+        <a class="nav-link" [routerLink]="['directivas-estructurales']"
+          >Estructurales</a
+        >
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['heroes']">Heroes</a>
       </li>
     </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Buscar heroe"
+        aria-label="Search"
+        #buscarTexto
+        (keyup.enter)="buscarHeroe(buscarTexto.value)"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="button"
+        (click)="buscarHeroe(buscarTexto.value)"
+      >
+        Buscar
+      </button>
+    </div>
   </div>
 </nav>
-<br>
+<br />

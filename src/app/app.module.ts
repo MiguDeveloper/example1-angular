@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DirectivasEstructuralesComponent } from './components/directivas-estructurales/directivas-estructurales.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { GridHeroeComponent } from './components/grid-heroe/grid-heroe.component';
+import { BusquedaHeroeComponent } from './components/busqueda-heroe/busqueda-heroe.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HeroeComponent } from './components/heroe/heroe.component';
     FooterComponent,
     DirectivasEstructuralesComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    GridHeroeComponent,
+    BusquedaHeroeComponent
   ],
   imports: [
     BrowserModule,
