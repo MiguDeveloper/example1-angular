@@ -1,0 +1,24 @@
+<div class="row animated fadeIn fast">
+  <div class="col">
+    <h1>*ngIf</h1>
+    <hr />
+    <div class="card bg-light mb-3" style="max-width: 100%;" *ngIf="showHide">
+      <div class="card-body">
+        <h5 class="card-title">{{ frase.author }}</h5>
+        <p class="card-text">
+          {{ frase.frase }}
+        </p>
+      </div>
+    </div>
+    <button class="btn btn-block btn-primary" (click)="showOrHide()">
+      {{ showHide ? "Ocultar" : "Mostrar" }}
+    </button>
+  </div>
+  <div class="col">
+    <h1>*ngFor</h1>
+    <hr />
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let personaje of personajes">{{personaje}}</li>      
+    </ul>
+  </div>
+</div>
