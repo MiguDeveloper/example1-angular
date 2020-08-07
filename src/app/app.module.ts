@@ -12,6 +12,10 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { GridHeroeComponent } from './components/grid-heroe/grid-heroe.component';
 import { BusquedaHeroeComponent } from './components/busqueda-heroe/busqueda-heroe.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+import { ContraseniaPipe } from './pipes/contrasenia.pipe';
+import { MiscelaneosComponent } from './components/miscelaneos/miscelaneos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { BusquedaHeroeComponent } from './components/busqueda-heroe/busqueda-her
     HeroesComponent,
     HeroeComponent,
     GridHeroeComponent,
-    BusquedaHeroeComponent
+    BusquedaHeroeComponent,
+    PipesComponent,
+    CapitalizadoPipe,
+    ContraseniaPipe,
+    MiscelaneosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,146 @@
+<h1 class="mt-3">Pipes <small>Angular</small></h1>
+<hr />
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Variable</th>
+          <th>Pipe</th>
+          <th>Salida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>uppercase</td>
+          <td>{{ nombre | uppercase }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre2 }}</td>
+          <td>capitalizado</td>
+          <td>{{ nombre2 | capitalizado }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>lowercase</td>
+          <td>{{ nombre | lowercase }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>slice:3</td>
+          <td>{{ nombre | slice: 3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ nombre }}</td>
+          <td>slice:0:3</td>
+          <td>{{ nombre | slice: 0:3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ numeros }}</td>
+          <td>slice:0:3</td>
+          <td>{{ numeros | slice: 0:3 }}</td>
+        </tr>
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number</td>
+          <td>{{ PI | number: "3.0-0" }}</td>
+        </tr>
+        <tr>
+          <td>{{ PI }}</td>
+          <td>number</td>
+          <td>{{ PI | number: ".0-2" }}</td>
+        </tr>
+        <tr>
+          <td>{{ porcentaje }}</td>
+          <td>percent</td>
+          <td>{{ porcentaje | percent }}</td>
+        </tr>
+        <tr>
+          <td>{{ porcentaje }}</td>
+          <td>percent:'2.2-2'</td>
+          <td>{{ porcentaje | percent: "2.2-2" }}</td>
+        </tr>
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency</td>
+          <td>{{ salario | currency }}</td>
+        </tr>
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency: 'EUR'</td>
+          <td>{{ salario | currency: "EUR" }}</td>
+        </tr>
+        <tr>
+          <td>{{ salario }}</td>
+          <td>currency: 'CAD':'symbol':'.0-0'</td>
+          <td>{{ salario | currency: "CAD":"symbol":".0-0" }}</td>
+        </tr>
+        <tr>
+          <td>{{ valorPromesa }}</td>
+          <td>async</td>
+          <td>{{ valorPromesa | async }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>async</td>
+          <td>{{ fecha | date }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>async: date: 'medium'</td>
+          <td>{{ fecha | date: "medium" }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>async: date: 'short'</td>
+          <td>{{ fecha | date: "short" }}</td>
+        </tr>
+        <tr>
+          <td>{{ fecha }}</td>
+          <td>async: date: 'MMMM-dd'</td>
+          <td>{{ fecha | date: "MMMM-dd" }}</td>
+        </tr>
+        <tr>
+          <td>contraseña</td>
+          <td>
+            contraseña {{ activar }} <br />
+            <button
+              class="btn btn-outline-primary"
+              (click)="activar = !activar"
+            >
+              {{ activar ? "ver" : "ocultar" }}
+            </button>
+          </td>
+          <td>{{ constrasenia | contrasenia: activar }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-12">
+    <h4>Json</h4>
+    <hr />
+    <div class="row">
+      <div class="col">
+        {{ heroe | json }}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <h4>Slice</h4>
+    <ul>
+      <li *ngFor="let numero of numeros | slice: 5:20">{{ numero }}</li>
+    </ul>
+  </div>
+  <div class="col-md-12">
+    <h4>Slice de personajes</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let personaje of personajes | slice: 1:4"
+      >
+        {{ personaje }}
+      </li>
+    </ul>
+  </div>
+</div>

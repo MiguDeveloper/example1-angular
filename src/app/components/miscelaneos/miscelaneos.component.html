@@ -1,0 +1,142 @@
+<h2>Demos <small>Angular</small></h2>
+<br />
+
+<div class="row">
+  <div class="col">
+    <h3>Uso del ngStyle</h3>
+    <hr />
+    <p [style.fontSize.px]="tamanioFont">
+      Esta es una frase cualquiera: Lorem, ipsum dolor sit amet consectetur
+      adipisicing elit. Ullam quasi consequatur illo accusantium exercitationem
+      !
+    </p>
+
+    <button
+      class="btn btn-primary mr-2"
+      (click)="tamanioFont = tamanioFont + 5"
+    >
+      <i class="fa fa-plus"></i>
+    </button>
+
+    <button class="btn btn-primary" (click)="tamanioFont = tamanioFont - 5">
+      <i class="fa fa-minus"></i>
+    </button>
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="col">
+    <h3>Uso del ngClass</h3>
+    <hr />
+    <div [ngClass]="alerta" class="alert mt-1" role="alert">
+      A simple alert alert—check it out!
+    </div>
+
+    <button
+      type="button"
+      class="mr-1 btn btn-primary"
+      (click)="alerta = 'alert-primary'"
+    >
+      Primary
+    </button>
+
+    <button
+      type="button"
+      class="mr-1 btn btn-secondary"
+      (click)="alerta = 'alert-secondary'"
+    >
+      Secondary
+    </button>
+
+    <button
+      type="button"
+      class="mr-1 btn btn-success"
+      (click)="alerta = 'alert-success'"
+    >
+      Success
+    </button>
+
+    <button
+      type="button"
+      class="mr-1 btn btn-danger"
+      (click)="alerta = 'alert-danger'"
+    >
+      Danger
+    </button>
+
+    <button
+      type="button"
+      class="mr-1 btn btn-warning"
+      (click)="alerta = 'alert-warning'"
+    >
+      Warning
+    </button>
+    <button
+      type="button"
+      class="mr-1 btn btn-info"
+      (click)="alerta = 'alert-info'"
+    >
+      Info
+    </button>
+
+    <button
+      type="button"
+      class="mr-1 btn btn-light"
+      (click)="alerta = 'alert-ligh'"
+    >
+      Light
+    </button>
+
+    <button
+      type="button"
+      class="mr-1 btn btn-dark"
+      (click)="alerta = 'alert-dark'"
+    >
+      Dark
+    </button>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col">
+    <h3
+      [ngClass]="{
+        'text-danger': propiedades.tipoDanger,
+        'text-info': !propiedades.tipoDanger
+      }"
+    >
+      Texto whatever
+    </h3>
+
+    <button
+      type="button"
+      class="btn"
+      [ngClass]="{
+        'btn-danger': propiedades.tipoDanger,
+        'btn-info': !propiedades.tipoDanger
+      }"
+      (click)="propiedades.tipoDanger = !propiedades.tipoDanger"
+    >
+      Cambiar
+    </button>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col">
+    <button
+      class="btn btn-primary"
+      type="button"
+      (click)="ejecutar()"
+      [disabled]="loading"
+    >
+      <i
+        class="fa"
+        [ngClass]="{ 'fa-refresh fa-spin': loading, 'fa-save': !loading }"
+      ></i>
+      <span *ngIf="!loading"> Guardar cambios</span>
+      <span *ngIf="loading"> Guardando</span>
+    </button>
+  </div>
+</div>

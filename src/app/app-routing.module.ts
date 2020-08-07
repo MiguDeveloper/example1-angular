@@ -1,4 +1,6 @@
-import { BusquedaHeroeComponent } from './components/busqueda-heroe/busqueda-heroe.component';
+import { MiscelaneosComponent } from "./components/miscelaneos/miscelaneos.component";
+import { PipesComponent } from "./components/pipes/pipes.component";
+import { BusquedaHeroeComponent } from "./components/busqueda-heroe/busqueda-heroe.component";
 import { GridHeroeComponent } from "./components/grid-heroe/grid-heroe.component";
 import { HeroeComponent } from "./components/heroe/heroe.component";
 import { HeroesComponent } from "./components/heroes/heroes.component";
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: "heroes", component: HeroesComponent },
   { path: "heroe/:id", component: HeroeComponent },
   { path: "search/:termino", component: BusquedaHeroeComponent },
+  { path: "pipes", component: PipesComponent },
+  { path: "miscelaneos", component: MiscelaneosComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" },
 ];
 
