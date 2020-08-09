@@ -140,3 +140,29 @@
     </button>
   </div>
 </div>
+<br />
+<div class="row">
+  <div class="col">
+    <h3>Directivas</h3>
+    <hr />
+    <p [appResaltado]="'orange'">Ejemplo de directivas</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <h3>ngSwitch</h3>
+    <hr />
+    <div [ngSwitch]="tipoAlerta">
+      <div *ngSwitchCase="'info'" class="alert alert-info" role="alert">
+        A simple primary alert—check it out!
+      </div>
+      <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">
+        A simple primary alert—check it out!
+      </div>
+      <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">
+        A simple primary alert—check it out!
+      </div>
+      <div *ngSwitchDefault>defaul</div>
+    </div>
+  </div>
+</div>

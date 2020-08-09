@@ -12,6 +12,7 @@ export class MiscelaneosComponent implements OnInit {
     tipoDanger: true,
   };
   loading = false;
+  tipoAlerta = "success";
 
   constructor() {}
 

@@ -16,6 +16,11 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
 import { ContraseniaPipe } from './pipes/contrasenia.pipe';
 import { MiscelaneosComponent } from './components/miscelaneos/miscelaneos.component';
+import { ResaltadoDirective } from './directives/resaltado.directive';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { UsuarioNuevoComponent } from './components/usuario/usuario-nuevo/usuario-nuevo.component';
+import { UsuarioEditarComponent } from './components/usuario/usuario-editar/usuario-editar.component';
+import { UsuarioDetalleComponent } from './components/usuario/usuario-detalle/usuario-detalle.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { MiscelaneosComponent } from './components/miscelaneos/miscelaneos.compo
     PipesComponent,
     CapitalizadoPipe,
     ContraseniaPipe,
-    MiscelaneosComponent
+    MiscelaneosComponent,
+    ResaltadoDirective,
+    UsuarioComponent,
+    UsuarioNuevoComponent,
+    UsuarioEditarComponent,
+    UsuarioDetalleComponent
   ],
   imports: [
     BrowserModule,

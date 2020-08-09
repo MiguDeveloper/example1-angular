@@ -6,3 +6,8 @@ Generacion de pipes
 ```js
 ng g p pipes/capitalizado
 ```
+
+Generación de directivas
+```js
+ng g d directives/resaltado
+```
