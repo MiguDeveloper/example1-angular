@@ -19,6 +19,7 @@ export class AproxReactivoComponent implements OnInit {
   ngOnInit(): void {
     this.crearFormulario();
     this.cargarDataAlFormulario();
+    this.crearListener();
   }
 
   get pasatiempos() {
@@ -50,6 +51,8 @@ export class AproxReactivoComponent implements OnInit {
             Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
           ],
         ],
+        usuario: ["", Validators.required, this.validadores.exiteUsuario],
+        usuario2: [""],
         pass1: ["", Validators.required],
         pass2: ["", Validators.required],
         direccion: this.fb.group({
@@ -62,6 +65,14 @@ export class AproxReactivoComponent implements OnInit {
         validators: this.validadores.passwordsIguales("pass1", "pass2"),
       }
     );
+  }
+
+  crearListener() {
+    this.usuarioForm
+      .get("usuario")
+      .valueChanges.subscribe((dato) =>
+        this.usuarioForm.get("usuario2").setValue(dato)
+      );
   }
 
   guardarForm() {

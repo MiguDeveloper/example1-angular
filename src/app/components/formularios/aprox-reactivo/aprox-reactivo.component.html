@@ -49,6 +49,33 @@
   </div>
 
   <div class="form-group row">
+    <label class="col-2 col-form-label">Usuario</label>
+    <div class="col">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Usuario"
+        formControlName="usuario"
+        [class.is-invalid]="validacionControl('usuario')"
+      />
+      <small class="text-form text-danger" *ngIf="validacionControl('usuario')"
+        >usuario ya existe</small
+      >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Usuario Rep</label>
+    <div class="col">
+      <input
+        class="form-control"
+        type="text"
+        placeholder=""
+        formControlName="usuario2"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row">
     <label class="col-2 col-form-label">Contraseña</label>
     <div class="col">
       <input
