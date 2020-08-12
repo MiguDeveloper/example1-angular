@@ -166,3 +166,18 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col">
+    <h3>If else => ngTemplate y evitar multiple evaluación</h3>
+    <hr />
+    <div *ngIf="usuario; then logout else login">      
+    </div>
+    <ng-template #logout>
+      Bienvenido {{usuario}}
+    </ng-template>
+    <ng-template #login>
+      Por favor ingrese <br>
+      <button class="btn btn-primary" (click)="usuario='Miguel'">Ingresar</button>
+    </ng-template>
+  </div>
+</div>

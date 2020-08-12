@@ -34,3 +34,11 @@ skills: this.fb.array([
     
 ])
 ```
+
+Desplegando aplicaciones a producción
+ - Si queremos tener una versión de pre-producción podemos y usar lo siguiente
+ ```ng build```
+ - Si queremo un compilado para producción ejecutamos lo siguiente:
+    - Primero debemos de modificar nuestro ```enviromen.ts``` y en la propiedad producción la ponemos en true de esta forma ```production: true```
+    - Luego ejecutamos el comando ```ng build --prod```
+    - 

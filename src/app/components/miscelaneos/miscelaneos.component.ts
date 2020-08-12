@@ -13,6 +13,7 @@ export class MiscelaneosComponent implements OnInit, OnDestroy, OnChanges, DoChe
   };
   loading = false;
   tipoAlerta = "success";
+  usuario: string;
 
   constructor() {}
 
