@@ -1,5 +1,6 @@
+import { ValidadoresService } from "./../../../services/validadores.service";
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, FormArray } from "@angular/forms";
 import { ObjectUnsubscribedError } from "rxjs";
 
 @Component({
@@ -10,10 +11,18 @@ import { ObjectUnsubscribedError } from "rxjs";
 export class AproxReactivoComponent implements OnInit {
   usuarioForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private validadores: ValidadoresService
+  ) {}
 
   ngOnInit(): void {
-    this.iniciarFormulario();
+    this.crearFormulario();
+    this.cargarDataAlFormulario();
+  }
+
+  get pasatiempos() {
+    return this.usuarioForm.get("pasatiempos") as FormArray;
   }
 
   validacionControl(nombreControl: string): boolean {
@@ -23,27 +32,42 @@ export class AproxReactivoComponent implements OnInit {
     );
   }
 
-  iniciarFormulario() {
-    this.usuarioForm = this.fb.group({
-      nombre: ["", [Validators.required, Validators.minLength(5)]],
-      apellido: ["", Validators.required],
-      correo: [
-        "",
-        [
-          Validators.required,
-          Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
+  get pass2NoValido() {
+    const pwd1 = this.usuarioForm.get("pass1").value;
+    const pwd2 = this.usuarioForm.get("pass2").value;
+    return pwd1 === pwd2 ? false : true;
+  }
+
+  crearFormulario() {
+    this.usuarioForm = this.fb.group(
+      {
+        nombre: ["", [Validators.required, Validators.minLength(5)]],
+        apellido: ["", [Validators.required, this.validadores.noHerrera]],
+        correo: [
+          "",
+          [
+            Validators.required,
+            Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
+          ],
         ],
-      ],
-      direccion: this.fb.group({
-        distrito: ["", Validators.required],
-        ciudad: ["", Validators.required],
-      }),
-    });
+        pass1: ["", Validators.required],
+        pass2: ["", Validators.required],
+        direccion: this.fb.group({
+          distrito: ["", Validators.required],
+          ciudad: ["", Validators.required],
+        }),
+        pasatiempos: this.fb.array([]),
+      },
+      {
+        validators: this.validadores.passwordsIguales("pass1", "pass2"),
+      }
+    );
   }
 
   guardarForm() {
     if (this.usuarioForm.valid) {
       console.log("Validación correcta");
+      this.usuarioForm.reset();
     } else {
       console.log(this.usuarioForm);
       Object.values(this.usuarioForm.controls).forEach((control) => {
@@ -56,5 +80,29 @@ export class AproxReactivoComponent implements OnInit {
         }
       });
     }
+  }
+
+  cargarDataAlFormulario() {
+    this.usuarioForm.reset({
+      nombre: "Miguel",
+      apellido: "Chinchay",
+      correo: "miguel@gmail.com",
+      direccion: {
+        distrito: "Chosica",
+        ciudad: "Lima",
+      },
+    });
+
+    ["Programar", "Leer"].forEach((item) =>
+      this.pasatiempos.push(this.fb.control(item))
+    );
+  }
+
+  agregarPasatiempo() {
+    this.pasatiempos.push(this.fb.control("", Validators.required));
+  }
+
+  borrarPasatiempo(i: number) {
+    this.pasatiempos.removeAt(i);
   }
 }

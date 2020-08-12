@@ -27,3 +27,10 @@ Patrón de correo válido
 ```js
 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
 ```
+
+Cuando queremos en formulario reactivos tener un arreglo de controles podemos hacer lo siguiente
+```js
+skills: this.fb.array([
+    
+])
+```
