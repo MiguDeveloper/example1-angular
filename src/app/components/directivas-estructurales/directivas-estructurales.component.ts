@@ -22,4 +22,8 @@ export class DirectivasEstructuralesComponent implements OnInit {
   showOrHide() {
     this.showHide = !this.showHide;
   }
+
+  clickOnLi(i: string) {
+    document.getElementById(i).style.backgroundColor = "#FF9933";
+  }
 }

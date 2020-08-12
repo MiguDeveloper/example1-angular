@@ -1,5 +1,6 @@
+import { PaisesService } from "./../../../services/paises.service";
 import { Component, OnInit } from "@angular/core";
-import { NgForm } from '@angular/forms';
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-aprox-template",
@@ -8,13 +9,30 @@ import { NgForm } from '@angular/forms';
 })
 export class AproxTemplateComponent implements OnInit {
   usuario = {
-    nombre: 'Miguel'
-  }
-  constructor() {}
+    nombre: "",
+    apellido: "",
+    correo: "",
+    pais: "",
+    sexo: "",
+  };
+  paises: any[] = [];
 
-  ngOnInit(): void {}
+  constructor(private paisesService: PaisesService) {}
+
+  ngOnInit(): void {
+    this.paisesService.getPaises().subscribe((rpta: any[]) => {
+      this.paises = rpta;
+      this.paises.unshift({ codigo: "", nombre: "Seleccione un pais" });
+    });
+  }
 
   guardar(forma: NgForm) {
-    console.log(forma.value);
+    if (forma.valid) {
+      console.log(forma.value);
+    } else {
+      Object.values(forma.controls).forEach((control) =>
+        control.markAsTouched()
+      );
+    }
   }
 }

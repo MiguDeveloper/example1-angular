@@ -1,38 +1,108 @@
 <h4 class="mt-2">Formularios <small> Reactivos </small></h4>
-<form autocomplete="off">
+<form [formGroup]="usuarioForm" autocomplete="off">
   <div>
     <div class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
-      <div class="col-8">
-        <input class="form-control" type="text" placeholder="Nombre" />
+      <div class="col">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Nombre"
+          formControlName="nombre"
+          [class.is-invalid]="validacionControl('nombre')"
+        />
+        <small class="text-form text-danger" *ngIf="validacionControl('nombre')"
+          >campo requerido</small
+        >
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-2 col-form-label">Apellido</label>
-      <div class="col-8">
-        <input class="form-control" type="text" placeholder="Apellido" />
+      <div class="col">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Apellido"
+          formControlName="apellido"
+          [class.is-invalid]="validacionControl('apellido')"
+        />
+        <small
+          class="text-form text-danger"
+          *ngIf="validacionControl('apellido')"
+          >campo es requerido</small
+        >
       </div>
     </div>
   </div>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">Correo</label>
-    <div class="col-8">
+    <div class="col">
       <input
         class="form-control"
         type="email"
         placeholder="Correo electrónico"
+        formControlName="correo"
+        [class.is-invalid]="validacionControl('correo')"
       />
+      <small class="text-form text-danger" *ngIf="validacionControl('correo')"
+        >campo es requerido</small
+      >
+    </div>
+  </div>
+
+  <div class="form-group row" formGroupName="direccion">
+    <label class="col-2 col-form-label">Dirección</label>
+    <div class="form-row col">
+      <div class="col">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Distrito"
+          formControlName="distrito"
+          [class.is-invalid]="validacionControl('direccion.distrito')"
+        />
+        <small class="text-form text-danger" *ngIf="validacionControl('direccion.distrito')"
+          >campo es requerido</small
+        >
+      </div>
+      <div class="col">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Ciudad"
+          formControlName="ciudad"
+          [class.is-invalid]="validacionControl('direccion.ciudad')"
+        />
+        <small class="text-form text-danger" *ngIf="validacionControl('direccion.ciudad')"
+          >campo es requerido</small
+        >
+      </div>
     </div>
   </div>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
-    <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary btn-block">
+    <div class="input-group col">
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-block"
+        (click)="guardarForm()"
+      >
         Guardar
       </button>
     </div>
   </div>
 </form>
+
+<hr />
+<pre>
+  formulario valido = {{ usuarioForm.valid }}
+</pre>
+<pre>
+  estado del formulario = {{ usuarioForm.status }}
+</pre>
+<pre>
+  {{ usuarioForm.value | json }}
+</pre>

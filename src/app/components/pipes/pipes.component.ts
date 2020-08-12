@@ -35,4 +35,14 @@ export class PipesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  inicio = 0;
+  handleStep() {
+    if (this.personajes.length > 0) {
+      const totalElementos = this.personajes.length - 1;
+      if (this.inicio < totalElementos) {
+        this.inicio++;
+      }
+    }
+  }
 }

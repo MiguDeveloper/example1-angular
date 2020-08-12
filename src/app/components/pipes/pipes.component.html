@@ -129,18 +129,19 @@
   <div class="col-md-12">
     <h4>Slice</h4>
     <ul>
-      <li *ngFor="let numero of numeros | slice: 5:20">{{ numero }}</li>
+      <li *ngFor="let numero of numeros | slice: 0:2">{{ numero }}</li>
     </ul>
   </div>
+  
   <div class="col-md-12">
     <h4>Slice de personajes</h4>
     <ul class="list-group">
       <li
-        class="list-group-item"
-        *ngFor="let personaje of personajes | slice: 1:4"
-      >
-        {{ personaje }}
+        class="list-group-item" *ngFor="let personaje of personajes | slice: 0:inicio+1">{{ personaje }}
       </li>
     </ul>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary" (click)="handleStep()">Continuar</button>
   </div>
 </div>

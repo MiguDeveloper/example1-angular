@@ -18,7 +18,7 @@
     <h1>*ngFor</h1>
     <hr />
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let personaje of personajes">{{personaje}}</li>      
+      <li class="list-group-item" *ngFor="let personaje of personajes; let i= index" id="{{i}}" (click)="clickOnLi(i)">{{personaje}}</li>      
     </ul>
   </div>
 </div>

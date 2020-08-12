@@ -22,3 +22,8 @@ Ciclo de vida de un componente
 - ```ngAfterViewInit``` => después de la inicialización del componente/hijos.
 - ```ngAfterViewChecked``` => después de cada revisión de los componentes/hijos.
 - ```ngOnDestroy``` => justo antes que se destruya el componente o directiva.
+
+Patrón de correo válido
+```js
+pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+```

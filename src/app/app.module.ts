@@ -24,7 +24,8 @@ import { UsuarioDetalleComponent } from "./components/usuario/usuario-detalle/us
 import { FormulariosComponent } from "./components/formularios/formularios.component";
 import { AproxTemplateComponent } from "./components/formularios/aprox-template/aprox-template.component";
 import { AproxReactivoComponent } from "./components/formularios/aprox-reactivo/aprox-reactivo.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,14 @@ import { FormsModule } from "@angular/forms";
     AproxTemplateComponent,
     AproxReactivoComponent,
   ],
-  imports: [BrowserModule, RouterModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
