@@ -29,6 +29,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { ChartsModule } from "ng2-charts";
 import { LineaComponent } from './components/graficos/linea/linea.component';
 import { BarraComponent } from './components/graficos/barra/barra.component';
+import { ScrollComponent } from './components/scroll/scroll.component';
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { DragableComponent } from './components/dragable/dragable.component';
+import { DragDropModule } from "@angular/cdk/drag-drop";
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +58,8 @@ import { BarraComponent } from './components/graficos/barra/barra.component';
     AproxReactivoComponent,
     LineaComponent,
     BarraComponent,
+    ScrollComponent,
+    DragableComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +69,8 @@ import { BarraComponent } from './components/graficos/barra/barra.component';
     HttpClientModule,
     ReactiveFormsModule,
     ChartsModule,
+    ScrollingModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],

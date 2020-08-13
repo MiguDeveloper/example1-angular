@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Angular</a>
+  <a class="navbar-brand" href="#">Angular Básico</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -52,6 +52,23 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['grafico-linea']">Lineass</a>
           <a class="dropdown-item" [routerLink]="['grafico-barra']">Barras</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Drag & drop
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['scroll-virtual']">Scrolling</a>
+          <a class="dropdown-item" [routerLink]="['drag-and-drop']">Drag & drop</a>
         </div>
       </li>
     </ul>

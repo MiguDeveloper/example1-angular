@@ -1,3 +1,5 @@
+import { DragableComponent } from "./components/dragable/dragable.component";
+import { ScrollComponent } from "./components/scroll/scroll.component";
 import { BarraComponent } from "./components/graficos/barra/barra.component";
 import { AproxReactivoComponent } from "./components/formularios/aprox-reactivo/aprox-reactivo.component";
 import { AproxTemplateComponent } from "./components/formularios/aprox-template/aprox-template.component";
@@ -49,6 +51,8 @@ const routes: Routes = [
   },
   { path: "grafico-linea", component: LineaComponent },
   { path: "grafico-barra", component: BarraComponent },
+  { path: "scroll-virtual", component: ScrollComponent },
+  { path: "drag-and-drop", component: DragableComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" },
 ];
 
