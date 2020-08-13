@@ -1,3 +1,4 @@
+import { BarraComponent } from "./components/graficos/barra/barra.component";
 import { AproxReactivoComponent } from "./components/formularios/aprox-reactivo/aprox-reactivo.component";
 import { AproxTemplateComponent } from "./components/formularios/aprox-template/aprox-template.component";
 import { FormulariosComponent } from "./components/formularios/formularios.component";
@@ -14,6 +15,7 @@ import { DirectivasEstructuralesComponent } from "./components/directivas-estruc
 import { HomeComponent } from "./components/home/home.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { LineaComponent } from "./components/graficos/linea/linea.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -45,6 +47,8 @@ const routes: Routes = [
       { path: "**", pathMatch: "full", redirectTo: "aprox-template" },
     ],
   },
+  { path: "grafico-linea", component: LineaComponent },
+  { path: "grafico-barra", component: BarraComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" },
 ];
 

@@ -26,6 +26,9 @@ import { AproxTemplateComponent } from "./components/formularios/aprox-template/
 import { AproxReactivoComponent } from "./components/formularios/aprox-reactivo/aprox-reactivo.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { ChartsModule } from "ng2-charts";
+import { LineaComponent } from './components/graficos/linea/linea.component';
+import { BarraComponent } from './components/graficos/barra/barra.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,8 @@ import { HttpClientModule } from "@angular/common/http";
     FormulariosComponent,
     AproxTemplateComponent,
     AproxReactivoComponent,
+    LineaComponent,
+    BarraComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,8 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
