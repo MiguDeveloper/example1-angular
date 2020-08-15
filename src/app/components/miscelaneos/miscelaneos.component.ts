@@ -5,7 +5,8 @@ import { Component, OnInit, OnDestroy, OnChanges, DoCheck } from '@angular/core'
   templateUrl: './miscelaneos.component.html',
   styleUrls: ['./miscelaneos.component.css'],
 })
-export class MiscelaneosComponent implements OnInit, OnDestroy{
+export class MiscelaneosComponent implements OnInit, OnDestroy {
+
   tamanioFont = 20;
   alerta = 'alert-secondary';
   propiedades = {
