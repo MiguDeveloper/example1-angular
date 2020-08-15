@@ -1,12 +1,12 @@
-import { HeroeService } from "./../../services/heroe.service";
-import { ActivatedRoute } from "@angular/router";
-import { Heroe } from "./../../models/heroe";
-import { Component, OnInit } from "@angular/core";
+import { HeroeService } from './../../services/heroe.service';
+import { ActivatedRoute } from '@angular/router';
+import { Heroe } from './../../models/heroe';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-heroe",
-  templateUrl: "./heroe.component.html",
-  styleUrls: ["./heroe.component.css"],
+  selector: 'app-heroe',
+  templateUrl: './heroe.component.html',
+  styleUrls: ['./heroe.component.css'],
 })
 export class HeroeComponent implements OnInit {
   heroes: Heroe[];

@@ -1,24 +1,24 @@
-import { Component, OnInit, OnDestroy, OnChanges, DoCheck } from "@angular/core";
+import { Component, OnInit, OnDestroy, OnChanges, DoCheck } from '@angular/core';
 
 @Component({
-  selector: "app-miscelaneos",
-  templateUrl: "./miscelaneos.component.html",
-  styleUrls: ["./miscelaneos.component.css"],
+  selector: 'app-miscelaneos',
+  templateUrl: './miscelaneos.component.html',
+  styleUrls: ['./miscelaneos.component.css'],
 })
-export class MiscelaneosComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
+export class MiscelaneosComponent implements OnInit, OnDestroy{
   tamanioFont = 20;
-  alerta = "alert-secondary";
+  alerta = 'alert-secondary';
   propiedades = {
     tipoDanger: true,
   };
   loading = false;
-  tipoAlerta = "success";
+  tipoAlerta = 'success';
   usuario: string;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log("Ejecuto ngOnInit");
+    console.log('Ejecuto ngOnInit');
   }
 
   ejecutar() {
@@ -29,14 +29,7 @@ export class MiscelaneosComponent implements OnInit, OnDestroy, OnChanges, DoChe
   }
 
   ngOnDestroy() {
-    console.log("ejecuto ngOnDestroy");
+    console.log('ejecuto ngOnDestroy');
   }
 
-  ngOnChanges() {
-    console.log("ejecuto ngOnChanges");
-  }
-
-  ngDoCheck() {
-    console.log("Se ejecuto doCheck");
-  }
 }
