@@ -15,7 +15,7 @@ export class MiscelaneosComponent implements OnInit, OnDestroy, OnChanges, DoChe
   tipoAlerta = "success";
   usuario: string;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     console.log("Ejecuto ngOnInit");
@@ -36,7 +36,7 @@ export class MiscelaneosComponent implements OnInit, OnDestroy, OnChanges, DoChe
     console.log("ejecuto ngOnChanges");
   }
 
-  ngDoCheck(){
-    console.log('Se ejecuto doCheck');
+  ngDoCheck() {
+    console.log("Se ejecuto doCheck");
   }
 }

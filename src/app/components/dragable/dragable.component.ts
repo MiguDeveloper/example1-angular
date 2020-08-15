@@ -10,7 +10,11 @@ import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 export class DragableComponent implements OnInit {
   paises: any[] = [];
 
-  constructor(private paisesService: PaisesService) {}
+  constructor(private paisesService: PaisesService) {
+
+
+
+  }
 
   ngOnInit(): void {
     this.getPaises();
