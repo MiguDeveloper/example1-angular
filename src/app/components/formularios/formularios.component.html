@@ -1,30 +1,41 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        data-toggle="tab"
-        role="tab"
-        aria-controls="nuevo"
-        aria-selected="true"
-        routerLinkActive="active"
-        [routerLink]="['aprox-template']"
-        >Aproximación por template</a
-      >
-    </li>
-    <li class="nav-item" role="presentation">
-      <a
-        class="nav-link"
-        data-toggle="tab"
-        role="tab"
-        aria-controls="detalle"
-        aria-selected="false"
-        routerLinkActive="active"
-        [routerLink]="['aprox-reactivo']"
-        >Formularios reactivos</a
-      >
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <router-outlet></router-outlet>
-  </div>
-  
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      data-toggle="tab"
+      role="tab"
+      aria-controls="nuevo"
+      aria-selected="true"
+      routerLinkActive="active"
+      [routerLink]="['aprox-template']"
+      >Aproximación por template</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      data-toggle="tab"
+      role="tab"
+      aria-controls="detalle"
+      aria-selected="false"
+      routerLinkActive="active"
+      [routerLink]="['aprox-reactivo']"
+      >Formularios reactivos</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      data-toggle="tab"
+      role="tab"
+      aria-controls="detalle"
+      aria-selected="false"
+      routerLinkActive="active"
+      [routerLink]="['full-reactivo']"
+      >Full reactivo</a
+    >
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <router-outlet></router-outlet>
+</div>

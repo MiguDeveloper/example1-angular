@@ -15,7 +15,7 @@ export class BusquedaHeroeComponent implements OnInit {
   constructor(
     private heroesService: HeroeService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {

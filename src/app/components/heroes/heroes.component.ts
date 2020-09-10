@@ -11,10 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class HeroesComponent implements OnInit {
   heroes: Heroe[];
 
-  constructor(private heroesService: HeroeService) { }
+  constructor(private heroesService: HeroeService) {}
 
   ngOnInit(): void {
     this.heroes = this.heroesService.getHeroes();
   }
-
 }
