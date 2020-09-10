@@ -1,26 +1,38 @@
 <form [formGroup]="formulario">
   <div class="form-row">
-    <div class="form-group col-md-3">
+    <div class="form-group col">
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" />
+        <mat-error *ngIf="formulario.get('name').hasError('required')"
+          >Campo <strong>obligatiorio</strong></mat-error
+        >
       </mat-form-field>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col">
       <mat-form-field>
         <mat-label>Date</mat-label>
-        <input matInput [matDatepicker]="picker" />
+        <input matInput [matDatepicker]="picker" formControlName="date" />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="formulario.get('date').hasError('required')"
+          >Campo <strong>obligatiorio</strong></mat-error
+        >
       </mat-form-field>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col">
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput />
+        <input matInput formControlName="email" />
+        <mat-error *ngIf="emailField.hasError('required')"
+          >Campo <strong>obligatiorio</strong></mat-error
+        >
+        <mat-error *ngIf="emailField.hasError('email')"
+          >No es <strong>formato</strong> correcto</mat-error
+        >
       </mat-form-field>
     </div>
-    <div class="form-group col-md-3">
+    <div class="form-group col">
       <mat-form-field>
         <mat-label>Category</mat-label>
         <mat-select formControlName="category">
@@ -31,7 +43,61 @@
             {{ categoria.viewValue }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="formulario.get('category').hasError('required')"
+          >Campo <strong>obligatiorio</strong></mat-error
+        >
       </mat-form-field>
     </div>
   </div>
+  <div class="form-row">
+    <div class="form-group col">
+      <mat-form-field class="example-full-width">
+        <mat-label>Deje un commentario</mat-label>
+        <textarea
+          matInput
+          placeholder="Ej. comentario de..."
+          formControlName="text"
+        ></textarea>
+        <mat-hint>{{ textField.value.length }} / 20</mat-hint>
+      </mat-form-field>
+      <div *ngIf="textField.errors && textField.touched">
+        <mat-error *ngIf="textField.hasError('required')"
+          >Campo <strong>obligatiorio</strong></mat-error
+        >
+        <mat-error *ngIf="textField.hasError('maxlength')"
+          >Maximo permitido de caracteres es 20</mat-error
+        >
+      </div>
+    </div>
+    <div class="form-group col">
+      <label id="example-radio-group-label">Seleccione sexo:</label>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="list-radio-group"
+        formControlName="gender"
+      >
+        <mat-radio-button
+          class="item-radio-button"
+          *ngFor="let gender of genders"
+          [value]="gender.id"
+        >
+          {{ gender.description }}
+        </mat-radio-button>
+        <div *ngIf="genderField.errors && genderField.touched">
+          <mat-error *ngIf="genderField.hasError('required')"
+            >Campo <strong>requerido</strong></mat-error
+          >
+        </div>
+      </mat-radio-group>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" mat-raised-button color="accent" (click)="guardar()">
+      Guardar
+    </button>
+  </div>
 </form>
+<p>{{ formulario.status }}</p>
+<pre>
+  {{ formulario.value | json }}
+</pre>
