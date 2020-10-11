@@ -38,6 +38,7 @@ import { ReactivoFullComponent } from './components/formularios/reactivo-full/re
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
+import { InterceptoresComponent } from './components/interceptores/interceptores.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -69,6 +70,7 @@ registerLocaleData(localeES, 'es');
     ScrollComponent,
     DragableComponent,
     ReactivoFullComponent,
+    InterceptoresComponent,
   ],
   imports: [
     BrowserModule,

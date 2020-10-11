@@ -1,3 +1,4 @@
+import { InterceptoresComponent } from './components/interceptores/interceptores.component';
 import { ReactivoFullComponent } from './components/formularios/reactivo-full/reactivo-full.component';
 import { DragableComponent } from './components/dragable/dragable.component';
 import { ScrollComponent } from './components/scroll/scroll.component';
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'grafico-barra', component: BarraComponent },
   { path: 'scroll-virtual', component: ScrollComponent },
   { path: 'drag-and-drop', component: DragableComponent },
+  { path: 'interceptores', component: InterceptoresComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

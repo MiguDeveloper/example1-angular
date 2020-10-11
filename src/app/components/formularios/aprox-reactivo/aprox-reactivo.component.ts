@@ -1,12 +1,12 @@
-import { ValidadoresService } from "./../../../services/validadores.service";
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators, FormArray } from "@angular/forms";
-import { ObjectUnsubscribedError } from "rxjs";
+import { ValidadoresService } from './../../../services/validadores.service';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { ObjectUnsubscribedError } from 'rxjs';
 
 @Component({
-  selector: "app-aprox-reactivo",
-  templateUrl: "./aprox-reactivo.component.html",
-  styleUrls: ["./aprox-reactivo.component.css"],
+  selector: 'app-aprox-reactivo',
+  templateUrl: './aprox-reactivo.component.html',
+  styleUrls: ['./aprox-reactivo.component.css'],
 })
 export class AproxReactivoComponent implements OnInit {
   usuarioForm: FormGroup;
@@ -23,7 +23,7 @@ export class AproxReactivoComponent implements OnInit {
   }
 
   get pasatiempos() {
-    return this.usuarioForm.get("pasatiempos") as FormArray;
+    return this.usuarioForm.get('pasatiempos') as FormArray;
   }
 
   validacionControl(nombreControl: string): boolean {
@@ -34,50 +34,50 @@ export class AproxReactivoComponent implements OnInit {
   }
 
   get pass2NoValido() {
-    const pwd1 = this.usuarioForm.get("pass1").value;
-    const pwd2 = this.usuarioForm.get("pass2").value;
+    const pwd1 = this.usuarioForm.get('pass1').value;
+    const pwd2 = this.usuarioForm.get('pass2').value;
     return pwd1 === pwd2 ? false : true;
   }
 
   crearFormulario() {
     this.usuarioForm = this.fb.group(
       {
-        nombre: ["", [Validators.required, Validators.minLength(5)]],
-        apellido: ["", [Validators.required, this.validadores.noHerrera]],
+        nombre: ['', [Validators.required, Validators.minLength(5)]],
+        apellido: ['', [Validators.required, this.validadores.noHerrera]],
         correo: [
-          "",
+          '',
           [
             Validators.required,
-            Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"),
+            Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$'),
           ],
         ],
-        usuario: ["", Validators.required, this.validadores.exiteUsuario],
-        usuario2: [""],
-        pass1: ["", Validators.required],
-        pass2: ["", Validators.required],
+        usuario: ['', Validators.required, this.validadores.exiteUsuario],
+        usuario2: [''],
+        pass1: ['', Validators.required],
+        pass2: ['', Validators.required],
         direccion: this.fb.group({
-          distrito: ["", Validators.required],
-          ciudad: ["", Validators.required],
+          distrito: ['', Validators.required],
+          ciudad: ['', Validators.required],
         }),
         pasatiempos: this.fb.array([]),
       },
       {
-        validators: this.validadores.passwordsIguales("pass1", "pass2"),
+        validators: this.validadores.passwordsIguales('pass1', 'pass2'),
       }
     );
   }
 
   crearListener() {
     this.usuarioForm
-      .get("usuario")
+      .get('usuario')
       .valueChanges.subscribe((dato) =>
-        this.usuarioForm.get("usuario2").setValue(dato)
+        this.usuarioForm.get('usuario2').setValue(dato)
       );
   }
 
   guardarForm() {
     if (this.usuarioForm.valid) {
-      console.log("Validación correcta");
+      console.log('Validación correcta');
       this.usuarioForm.reset();
     } else {
       console.log(this.usuarioForm);
@@ -95,22 +95,22 @@ export class AproxReactivoComponent implements OnInit {
 
   cargarDataAlFormulario() {
     this.usuarioForm.reset({
-      nombre: "Miguel",
-      apellido: "Chinchay",
-      correo: "miguel@gmail.com",
+      nombre: 'Miguel',
+      apellido: 'Chinchay',
+      correo: 'miguel@gmail.com',
       direccion: {
-        distrito: "Chosica",
-        ciudad: "Lima",
+        distrito: 'Chosica',
+        ciudad: 'Lima',
       },
     });
 
-    ["Programar", "Leer"].forEach((item) =>
+    ['Programar', 'Leer'].forEach((item) =>
       this.pasatiempos.push(this.fb.control(item))
     );
   }
 
   agregarPasatiempo() {
-    this.pasatiempos.push(this.fb.control("", Validators.required));
+    this.pasatiempos.push(this.fb.control('', Validators.required));
   }
 
   borrarPasatiempo(i: number) {
