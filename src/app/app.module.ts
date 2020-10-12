@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { MaterialModule } from './material.module';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,7 +27,7 @@ import { FormulariosComponent } from './components/formularios/formularios.compo
 import { AproxTemplateComponent } from './components/formularios/aprox-template/aprox-template.component';
 import { AproxReactivoComponent } from './components/formularios/aprox-reactivo/aprox-reactivo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
 import { LineaComponent } from './components/graficos/linea/linea.component';
 import { BarraComponent } from './components/graficos/barra/barra.component';
@@ -85,7 +86,10 @@ registerLocaleData(localeES, 'es');
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
