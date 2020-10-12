@@ -1,3 +1,4 @@
+import { UnitTestComponent } from './components/unit-test/unit-test.component';
 import { InterceptoresComponent } from './components/interceptores/interceptores.component';
 import { ReactivoFullComponent } from './components/formularios/reactivo-full/reactivo-full.component';
 import { DragableComponent } from './components/dragable/dragable.component';
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: 'scroll-virtual', component: ScrollComponent },
   { path: 'drag-and-drop', component: DragableComponent },
   { path: 'interceptores', component: InterceptoresComponent },
+  { path: 'unittest', component: UnitTestComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

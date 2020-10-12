@@ -40,6 +40,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
 import { InterceptoresComponent } from './components/interceptores/interceptores.component';
+import { UnitTestComponent } from './components/unit-test/unit-test.component';
+import { StringComponent } from './components/unit-test/basicas/string.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -72,6 +74,8 @@ registerLocaleData(localeES, 'es');
     DragableComponent,
     ReactivoFullComponent,
     InterceptoresComponent,
+    UnitTestComponent,
+    StringComponent,
   ],
   imports: [
     BrowserModule,

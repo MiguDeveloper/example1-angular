@@ -2,15 +2,14 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AproxReactivoComponent } from './aprox-reactivo.component';
 
-describe('AproxReactivoComponent', () => {
+xdescribe('AproxReactivoComponent', () => {
   let component: AproxReactivoComponent;
   let fixture: ComponentFixture<AproxReactivoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AproxReactivoComponent ]
-    })
-    .compileComponents();
+      declarations: [AproxReactivoComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
