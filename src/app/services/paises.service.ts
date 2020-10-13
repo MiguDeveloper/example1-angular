@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 export class PaisesService {
   urlApi = 'https://restcountries.eu/rest/v2/lang/es';
   urlActualizarUsuario = '';
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getPaises() {
     return this.httpClient.get(this.urlApi).pipe(
@@ -22,10 +22,18 @@ export class PaisesService {
   getPaises2() {
     return this.httpClient.get(this.urlApi).pipe(
       map((resp: any[]) => {
-        return resp.map(pais => {
+        return resp.map((pais) => {
           return { nombre: pais.name, codigo: pais.alpha3Code };
         });
       })
     );
+  }
+
+  crearPais(pais: any) {
+    return this.httpClient.post('...', pais);
+  }
+
+  borrarPais(id: string) {
+    return this.httpClient.delete('...');
   }
 }

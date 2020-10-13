@@ -42,6 +42,8 @@ import localeES from '@angular/common/locales/es';
 import { InterceptoresComponent } from './components/interceptores/interceptores.component';
 import { UnitTestComponent } from './components/unit-test/unit-test.component';
 import { StringComponent } from './components/unit-test/basicas/string.component';
+import { EventEmiterComponent } from './components/unit-test/intermedias/event-emiter.component';
+import { EspiasComponent } from './components/unit-test/intermedias/espias/espias.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -76,6 +78,8 @@ registerLocaleData(localeES, 'es');
     InterceptoresComponent,
     UnitTestComponent,
     StringComponent,
+    EventEmiterComponent,
+    EspiasComponent,
   ],
   imports: [
     BrowserModule,

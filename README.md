@@ -76,6 +76,7 @@ xdescribe('AppComponent', ...)
 
 ```
 
+- Para saltarnos una prueba basta con poner la 'x' delante del describe()
 - El describe() nos permite agrupar pruebas it().
 - el it() es para hacer una prueba en concreto.
 - el ciclo de vida de las pruebas encontramos los métodos:
