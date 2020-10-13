@@ -44,6 +44,8 @@ import { UnitTestComponent } from './components/unit-test/unit-test.component';
 import { StringComponent } from './components/unit-test/basicas/string.component';
 import { EventEmiterComponent } from './components/unit-test/intermedias/event-emiter.component';
 import { EspiasComponent } from './components/unit-test/intermedias/espias/espias.component';
+import { MedicoComponent } from './components/unit-test/intermedias2/medico.component';
+import { IncrementadorComponent } from './components/unit-test/intermedias2/incrementador/incrementador.component';
 
 registerLocaleData(localeES, 'es');
 
@@ -80,6 +82,8 @@ registerLocaleData(localeES, 'es');
     StringComponent,
     EventEmiterComponent,
     EspiasComponent,
+    MedicoComponent,
+    IncrementadorComponent,
   ],
   imports: [
     BrowserModule,
