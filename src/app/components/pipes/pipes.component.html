@@ -43,13 +43,13 @@
         </tr>
         <tr>
           <td>{{ PI }}</td>
-          <td>number</td>
-          <td>{{ PI | number: "3.0-0" }}</td>
+          <td>number: "3.0-0"</td>
+          <td>{{ PI | number: '3.0-0' }}</td>
         </tr>
         <tr>
           <td>{{ PI }}</td>
-          <td>number</td>
-          <td>{{ PI | number: ".0-2" }}</td>
+          <td>number: ".0-2"</td>
+          <td>{{ PI | number: '.0-2' }}</td>
         </tr>
         <tr>
           <td>{{ porcentaje }}</td>
@@ -59,7 +59,7 @@
         <tr>
           <td>{{ porcentaje }}</td>
           <td>percent:'2.2-2'</td>
-          <td>{{ porcentaje | percent: "2.2-2" }}</td>
+          <td>{{ porcentaje | percent: '2.2-2' }}</td>
         </tr>
         <tr>
           <td>{{ salario }}</td>
@@ -69,12 +69,12 @@
         <tr>
           <td>{{ salario }}</td>
           <td>currency: 'EUR'</td>
-          <td>{{ salario | currency: "EUR" }}</td>
+          <td>{{ salario | currency: 'EUR' }}</td>
         </tr>
         <tr>
           <td>{{ salario }}</td>
           <td>currency: 'CAD':'symbol':'.0-0'</td>
-          <td>{{ salario | currency: "CAD":"symbol":".0-0" }}</td>
+          <td>{{ salario | currency: 'CAD':'symbol':'.0-0' }}</td>
         </tr>
         <tr>
           <td>{{ valorPromesa }}</td>
@@ -83,23 +83,23 @@
         </tr>
         <tr>
           <td>{{ fecha }}</td>
-          <td>async</td>
+          <td>date</td>
           <td>{{ fecha | date }}</td>
         </tr>
         <tr>
           <td>{{ fecha }}</td>
           <td>async: date: 'medium'</td>
-          <td>{{ fecha | date: "medium" }}</td>
+          <td>{{ fecha | date: 'medium' }}</td>
         </tr>
         <tr>
           <td>{{ fecha }}</td>
           <td>async: date: 'short'</td>
-          <td>{{ fecha | date: "short" }}</td>
+          <td>{{ fecha | date: 'short' }}</td>
         </tr>
         <tr>
           <td>{{ fecha }}</td>
           <td>async: date: 'MMMM-dd'</td>
-          <td>{{ fecha | date: "MMMM-dd" }}</td>
+          <td>{{ fecha | date: 'MMMM-dd' }}</td>
         </tr>
         <tr>
           <td>contraseña</td>
@@ -109,7 +109,7 @@
               class="btn btn-outline-primary"
               (click)="activar = !activar"
             >
-              {{ activar ? "ver" : "ocultar" }}
+              {{ activar ? 'ver' : 'ocultar' }}
             </button>
           </td>
           <td>{{ constrasenia | contrasenia: activar }}</td>
@@ -132,16 +132,21 @@
       <li *ngFor="let numero of numeros | slice: 0:2">{{ numero }}</li>
     </ul>
   </div>
-  
+
   <div class="col-md-12">
     <h4>Slice de personajes</h4>
     <ul class="list-group">
       <li
-        class="list-group-item" *ngFor="let personaje of personajes | slice: 0:inicio+1">{{ personaje }}
+        class="list-group-item"
+        *ngFor="let personaje of personajes | slice: 0:inicio + 1"
+      >
+        {{ personaje }}
       </li>
     </ul>
   </div>
   <div class="row">
-    <button type="button" class="btn btn-primary" (click)="handleStep()">Continuar</button>
+    <button type="button" class="btn btn-primary" (click)="handleStep()">
+      Continuar
+    </button>
   </div>
 </div>
