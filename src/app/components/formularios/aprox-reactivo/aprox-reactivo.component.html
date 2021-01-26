@@ -98,6 +98,9 @@
         formControlName="pass2"
         [class.is-invalid]="pass2NoValido"
       />
+      <small class="text-form text-danger" *ngIf="validacionControl('pass2')"
+        >debe de ingresar un termino</small
+      >
     </div>
   </div>
 

@@ -53,8 +53,8 @@ export class AproxReactivoComponent implements OnInit {
         ],
         usuario: ['', Validators.required, this.validadores.exiteUsuario],
         usuario2: [''],
-        pass1: ['', Validators.required],
-        pass2: ['', Validators.required],
+        pass1: ['', [Validators.required, Validators.minLength(5)]],
+        pass2: ['', [Validators.required, Validators.minLength(5)]],
         direccion: this.fb.group({
           distrito: ['', Validators.required],
           ciudad: ['', Validators.required],

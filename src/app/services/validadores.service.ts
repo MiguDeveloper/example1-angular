@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class ValidadoresService {
   constructor() {}
 
   noHerrera(control: FormControl): { [s: string]: boolean } {
-    if (control.value?.toLowerCase() === "herrera") {
+    if (control.value?.toLowerCase() === 'herrera') {
       return { noHerrera: true };
     }
 
@@ -37,7 +37,7 @@ export class ValidadoresService {
     }
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (control.value === "fachade") {
+        if (control.value === 'fachade') {
           resolve({ existe: true });
         } else {
           resolve(null);
